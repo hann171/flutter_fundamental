@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   //fungsi main, fungsi yang pertama kali dijalankan saat aplikasi dibuka
   runApp(MyApp()); //fungsi main jalanin class MyApp
@@ -12,9 +11,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Fundamental'),
+          title: Text('Latihan Row dan Column'),
         ),
-        body: Center(child: Text('Hello World')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //main axis itu sumbu Y
+          crossAxisAlignment: CrossAxisAlignment.start, //cross axis itu sumbu X
+          children: [
+            Text('Teks 1'),
+            Text('Teks 2'),
+            Text('Teks 3'),
+            Row(
+              children: [
+                Text('Teks 4'),
+                Text('Teks 5'),
+                Text('Teks 6')
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
