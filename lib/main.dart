@@ -11,23 +11,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Latihan Row dan Column'),
+          title: Text('Flutter Fundamental'),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start, //main axis itu sumbu Y
-          crossAxisAlignment: CrossAxisAlignment.start, //cross axis itu sumbu X
-          children: [
-            Text('Teks 1'),
-            Text('Teks 2'),
-            Text('Teks 3'),
-            Column(
-              children: [
-                Text('Teks 4'),
-                Text('Teks 5'),
-                Text('Teks 6')
-              ],
-            )
-          ],
+        body: Center(
+          child: Container(
+            color: Colors.lightBlue,
+            width: 150,
+            height: 50,
+            child: 
+              Text('Hello World Hello World Hello World Hello World Hello World Hello World Hello World',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+          ),
         ),
       ),
     );
