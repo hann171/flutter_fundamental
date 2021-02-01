@@ -21,8 +21,12 @@ class MyApp extends StatelessWidget {
             child: 
               Text('Hello World Hello WorldHello WorldHello WorldHello World Hello World Hello World',
                 maxLines: 2,
-                overflow: TextOverflow.clip,
-                softWrap: true,
+                style: 
+                  TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24
+                  ),
               ),
           ),
         ),
