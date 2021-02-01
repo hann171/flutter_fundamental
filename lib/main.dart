@@ -13,21 +13,21 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Fundamental'),
         ),
-        body: Center(
+        body: Container(
+          color: Colors.white,
+          margin: EdgeInsets.fromLTRB(10, 15, 20, 25),
           child: Container(
-            color: Colors.lightBlue,
-            width: 150,
-            height: 50,
-            child: 
-              Text('Hello World Hello WorldHello WorldHello WorldHello World Hello World Hello World',
-                maxLines: 2,
-                style: 
-                  TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24
-                  ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Colors.amber,
+                  Colors.white
+                ]
               ),
+            ),
           ),
         ),
       ),
