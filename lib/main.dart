@@ -10,9 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Flutter Fundamental'),),
-        
-      ), //tampilan awal yang ditampilin MaterialApp
+        appBar: AppBar(
+          title: Text('Flutter Fundamental'),
+        ),
+        body: Text('Hello World'),
+      ),
     );
   }
 }
