@@ -13,14 +13,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Latihan Row dan Column'),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start, //main axis itu sumbu Y
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //main axis itu sumbu Y
           crossAxisAlignment: CrossAxisAlignment.start, //cross axis itu sumbu X
           children: [
             Text('Teks 1'),
             Text('Teks 2'),
             Text('Teks 3'),
-            Column(
+            Row(
               children: [
                 Text('Teks 4'),
                 Text('Teks 5'),
