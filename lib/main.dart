@@ -11,31 +11,49 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int angka = 0;
-  void tambahAngka() {
-    setState(() { //buat ngerefresh halaman otomatis sesuai state yang ada saat ini
-      angka = angka + 1;
-    });
-  }
+  List<Widget> widgets = [];
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Statefull widget'),
+          title: Text('List & List view'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(angka.toString(), 
-              style: TextStyle(
-                fontSize: 10 + angka.toDouble()
-              ),),
-              RaisedButton(onPressed: tambahAngka, child: Text('Add'))
-            ],
-          ),
+        body: ListView(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                RaisedButton(
+                  onPressed: () {
+                    setState(() {
+                      widgets.add(Text(
+                        "Teks ke " + counter.toString(),
+                        style: TextStyle(fontSize: 20 + counter.toDouble()),
+                      ));
+                    });
+                    counter++;
+                  },
+                  child: Text('Tambah'),
+                ),
+                RaisedButton(
+                  onPressed: () {
+                    setState(() {
+                      widgets.removeLast();
+                      counter--;
+                    });
+                  },
+                  child: Text('Hapus'),
+                )
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widgets,
+            )
+          ],
         ),
       ),
     );
