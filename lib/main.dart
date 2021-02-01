@@ -14,20 +14,116 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Fundamental'),
         ),
         body: Container(
-          color: Colors.white,
-          margin: EdgeInsets.fromLTRB(10, 15, 20, 25),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: <Color>[
-                  Colors.amber,
-                  Colors.white
-                ]
+          color: Colors.blue,
+          margin: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                ],
               ),
-            ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 200,
+                    margin: EdgeInsets.only(right: 15),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[Colors.amber, Colors.white]),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
