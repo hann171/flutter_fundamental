@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   //fungsi main, fungsi yang pertama kali dijalankan saat aplikasi dibuka
   runApp(MyApp()); //fungsi main jalanin class MyApp
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Fundamental'),
         ),
-        body: Text('Hello World'),
+        body: Center(child: Text('Hello World')),
       ),
     );
   }
