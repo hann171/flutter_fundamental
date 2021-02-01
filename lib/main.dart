@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
             width: 150,
             height: 50,
             child: 
-              Text('Hello World Hello World Hello World Hello World Hello World Hello World Hello World',
+              Text('Hello World Hello WorldHello WorldHello WorldHello World Hello World Hello World',
                 maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                overflow: TextOverflow.clip,
+                softWrap: true,
               ),
           ),
         ),
