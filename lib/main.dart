@@ -5,124 +5,35 @@ void main() {
   runApp(MyApp()); //fungsi main jalanin class MyApp
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int angka = 0;
+  void tambahAngka() {
+    setState(() { //buat ngerefresh halaman otomatis sesuai state yang ada saat ini
+      angka = angka + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Fundamental'),
+          title: Text('Statefull widget'),
         ),
-        body: Container(
-          color: Colors.blue,
-          margin: EdgeInsets.all(10),
+        body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10,),
-              Row(
-                children: [
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 200,
-                    margin: EdgeInsets.only(right: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[Colors.amber, Colors.white]),
-                    ),
-                  ),
-                ],
-              ),
+              Text(angka.toString(), 
+              style: TextStyle(
+                fontSize: 10 + angka.toDouble()
+              ),),
+              RaisedButton(onPressed: tambahAngka, child: Text('Add'))
             ],
           ),
         ),
