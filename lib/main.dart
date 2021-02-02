@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamental/post_result_model.dart';
-import 'package:flutter_fundamental/user_model.dart';
+import 'package:flutter_fundamental/color_bloc.dart';
 
 void main() {
   //fungsi main, fungsi yang pertama kali dijalankan saat aplikasi dibuka
@@ -13,35 +12,54 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  PostResult postResult = null;
-  User userResult = null;
+  ColorBloc bloc = ColorBloc();
+
+  @override
+  void dispose() {
+    bloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              backgroundColor: Colors.amber,
+              onPressed: () {
+                bloc.eventSink.add(ColorEvent.to_amber);
+              },
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            FloatingActionButton(
+              backgroundColor: Colors.blue,
+              onPressed: () {
+                bloc.eventSink.add(ColorEvent.to_blue);
+              },
+            ),
+          ],
+        ),
         appBar: AppBar(
-          title: Text('API demo'),
+          title: Text("BLoC tanpa Library"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text((userResult != null
-                  ? userResult.id + " | " + userResult.name
-                  : "Tidak ada data")),
-              RaisedButton(
-                onPressed: () {
-                  User.connectAPI("2").then((value) {
-                    userResult = value;
-                    setState(() {});
-                  });
-                },
-                child: Text("Get"),
-              )
-            ],
-          ),
-        ),
+            child: StreamBuilder(
+          stream: bloc.stateStream,
+          initialData: Colors.amber,
+          builder: (context, snapshot) {
+            return AnimatedContainer(
+              duration: Duration(milliseconds: 500),
+              width: 100,
+              height: 100,
+              color: snapshot.data,
+            );
+          },
+        )),
       ),
     );
   }
