@@ -5,53 +5,109 @@ void main() {
   runApp(MyApp()); //fungsi main jalanin class MyApp
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  List<Widget> widgets = [];
-  int counter = 1;
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('List & List view'),
+          title: Text('Stack & Align Widget'),
         ),
-        body: ListView(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body: Stack(
+          children: [
+            //background
+            Column(
               children: [
-                RaisedButton(
-                  onPressed: () {
-                    setState(() {
-                      widgets.add(Text(
-                        "Teks ke " + counter.toString(),
-                        style: TextStyle(fontSize: 20 + counter.toDouble()),
-                      ));
-                    });
-                    counter++;
-                  },
-                  child: Text('Tambah'),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      Flexible(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.white,
+                          )),
+                      Flexible(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.black12,
+                          ))
+                    ],
+                  ),
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    setState(() {
-                      widgets.removeLast();
-                      counter--;
-                    });
-                  },
-                  child: Text('Hapus'),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      Flexible(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.black12,
+                          )),
+                      Flexible(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.white,
+                          ))
+                    ],
+                  ),
                 )
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widgets,
+
+            //list view
+            ListView(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Teks yang ada ditengah, layer ke 2 setelah background',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Teks yang ada ditengah, layer ke 2 setelah background',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Teks yang ada ditengah, layer ke 2 setelah background',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Teks yang ada ditengah, layer ke 2 setelah background',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Teks yang ada ditengah, layer ke 2 setelah background',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+
+            //button
+            Align(
+              alignment: Alignment(0,0.75), //Alignment(x,y)
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text('Button'),
+                color: Colors.amber,
+              ),
             )
           ],
         ),
